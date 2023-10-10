@@ -4,6 +4,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
+from data import Data
 from locators import Locators
 
 
@@ -13,9 +14,11 @@ def driver():
     options.add_argument("--window_size=1600,900")
     service = Service(ChromeDriverManager().install())
     browser = webdriver.Chrome(options=options, service=service)
-    browser.get('https://stellarburgers.nomoreparties.site/')
+    browser.get(Data.url)
+
     yield browser
     browser.quit()
+
 
 @pytest.fixture
 def sign_in(driver):
@@ -25,5 +28,3 @@ def sign_in(driver):
     driver.find_element(*Locators.BUTTON_LOGIN).click()
 
     return driver
-
-
