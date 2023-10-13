@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 
-class Locators:
+class MainPageLocators():
     # ВХОД/РЕГИСТРАЦИЯ-КНОПКИ/ССЫЛКИ
     ACCOUNT = (By.XPATH, ".//a[@href='/account']")  # кнопка "Личный кабинет" в шапке
     BUTTON_LOGIN = (By.XPATH, ".//button[text()='Войти']")  # кнопка "Войти" в форме авторизации
@@ -15,6 +15,7 @@ class Locators:
     EMAIL = (By.XPATH, ".//h2[text()='Регистрация']/..//label[text() = 'Email']/../input")  # "Email" в регистрации
     PASSWORD = (By.XPATH,".//h2[text()='Регистрация']/..//label[text() = 'Пароль']/../input")  # "Пароль" в регистрации
 
+class AuthPageLocators():
     # ПРОФИЛЬ
     LOGIN_TO_ACCOUNT = (By.XPATH, '//h2[contains(text(),"Вход")]') # "войти в аккаунт" на главной
     SIGN_IN_BUTTON_TO_ACC = (By.XPATH, ".//button[text()='Войти в аккаунт']")  # кнопка "Войти в аккаунт" на главной странице
@@ -25,6 +26,7 @@ class Locators:
     EXIT_BUTTON_ACCOUNT = (By.XPATH, ".//button[text()='Выход']")  # кнопка "Выход" в личном кабинете
     FORGOT_PASSWORD = (By.XPATH, ".//a[text()='Восстановить пароль']")  # кнопка "Восстановить пароль" в форме авторизации
 
+class ConstrPageLocators():
     # ПЕРЕХОД НА КОНСТРУКТОР
     CONSTR_BUTTON_HEAD = (By.XPATH, ".// p[text() = 'Конструктор']")  # кнопка "Конструктор" в шапке
     LOGO_ST_BURGER = (By.XPATH, ".//div[@class='AppHeader_header__logo__2D0X2']")  # логотип "Stellar Burgers" в шапке
